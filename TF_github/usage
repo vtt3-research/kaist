@@ -1,0 +1,6 @@
+--epochs [epochs_num] -b [batch_num] --lr [lr_num] -s [split_num]  -nc [class_num] --print-freq [freq]  --pretrained [source root] [target root]
+
+
+# ref
+[1] F.  M.  Carlucci,  L.  Porzi,  B.  Caputo,  E.  Ricci,  and S. Rota Bul`o.  Autodial:  Automatic domain alignment layers. In International Conference on Computer Vision (ICCV), 2017
+[2] Haeusser P, Mordvintsev A, Cremers D (2017) Learning by association: a versatile semi-supervised training method for neural networks. In: Proceedings of The IEEE conference on computer vision and pattern recognition (CVPR)
