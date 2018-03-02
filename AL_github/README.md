@@ -12,6 +12,8 @@ KAIST Active Learning for VTT
 * Caltech256 <http://www.vision.caltech.edu/Image_Datasets/Caltech256/>
 
 #### Training
+This codes suppose that your data folder includes 'labeled', 'unlabeled', 'test' folders.
+In train.py, set arg.data as the directory of your data folder
 ```
 python train.py
 ```
