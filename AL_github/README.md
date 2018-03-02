@@ -1,30 +1,30 @@
-#Active Learning
+# Active Learning
 KAIST Active Learning for VTT
 
 <br>
-##Requirements
+## Requirements
 * Python2.7
 * Pytorch
 
 <br>
-##Training
+## Training
 
-####Download dataset
+#### Download dataset
 * Caltech256 <http://www.vision.caltech.edu/Image_Datasets/Caltech256/>
 
-####Training
+#### Training
 ```
 python train.py
 ```
 
 <br>
-##Testing
+## Testing
 Test will be done during and after training
 
 <br>
-##Result
+## Result
 To be updated
 
 <br>
-##References
+## References
 [1] K. Wang D. Zhang Y. Li R. Zhang L. Lin "Cost-effective active learning for deep image classification", IEEE Trans. Circuits Syst. Video Technol. 2016. 
