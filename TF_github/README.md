@@ -4,6 +4,7 @@ KAIST Transfer Learning for VTT
 
 <br>
 ## Requirements
+
 * Python2.7
 * Pytorch
 
@@ -15,13 +16,13 @@ KAIST Transfer Learning for VTT
 
 #### Training
 ```
-python main.py --epochs [epochs_num] -b [batch_num] --lr [lr_num] -s [split_num]  -nc [class_num] --print-freq [freq]
---pretrained [source root] [target root]
+python main.py --epochs [epochs_num] -b [batch_num] --lr [lr_num] -s [split_num]  -nc [class_num] --print-freq [freq] --pretrained [source root] [target root]
 
 ```
 
 <br>
 ## Testing
+
 Test will be done during and after training
 
 <br>
