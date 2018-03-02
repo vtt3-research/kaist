@@ -13,7 +13,7 @@ KAIST Active Learning for VTT
 
 #### Training
 
-This codes suppose that your data folder includes 'labeled', 'unlabeled', 'test' folders.
+train.py supposes that your data folder includes 'labeled', 'unlabeled', 'test' folders.
 In train.py, set arg.data as the directory of your data folder
 ```
 python train.py
