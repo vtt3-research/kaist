@@ -1,6 +1,14 @@
 # kaist
 VTT3세부 한국과학기술원 김창익 교수님 연구실 저장소
+1. 전이학습을 통한 현실 세계 영상의 메타데이터 생성 기술 개발
+2. HCI 기반 딥러닝을 활용한 액티브 러닝 기술 개발
 
-## References
+## 하위
 
-[1] K. Wang D. Zhang Y. Li R. Zhang L. Lin "Cost-effective active learning for deep image classification", IEEE Trans. Circuits Syst. Video Technol. 2016. 
+### 전이학습
+TF_github
+
+### 액티브 러닝
+AL_github
+
+## License
