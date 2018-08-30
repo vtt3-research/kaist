@@ -2,6 +2,11 @@
 KAIST Transfer Learning for VTT
 
 
+# Pytorch implementation of da-faster_rcnn
+Pytorch version of da-faster_rcnn
+original repo can be found here: https://github.com/yuhuayc/da-faster-rcnn
+
+
 Requirements
 ------------
 
@@ -28,5 +33,13 @@ Result
 ------
 To be updated
 
-References
+Citations
 ----------
+```
+@inproceedings{chen2018domain,
+  title={Domain Adaptive Faster R-CNN for Object Detection in the Wild},
+  author={Chen, Yuhua and Li, Wen and Sakaridis, Christos and Dai, Dengxin and Van Gool, Luc},
+  booktitle = {Computer Vision and Pattern Recognition (CVPR)},
+  year={2018}
+}
+```
