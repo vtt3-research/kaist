@@ -20,7 +20,7 @@ Training
 --------
 
 #### Download and prepare dataset
-Follow the instruction of [here](https://github.com/yuhuayc/da-faster-rcnn)
+Follow the instruction of [here](https://github.com/yuhuayc/da-faster-rcnn#example)
 
 #### Train
 	python trainval_dafrcnn.py --cuda
