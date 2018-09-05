@@ -15,6 +15,7 @@ from datasets.pascal_voc import pascal_voc
 from datasets.coco import coco
 from datasets.imagenet import imagenet
 from datasets.vg import vg
+from datasets.original_n_foggy import original_n_foggy
 
 import numpy as np
 
@@ -23,6 +24,11 @@ for year in ['2007', '2012']:
   for split in ['train', 'val', 'trainval', 'test']:
     name = 'voc_{}_{}'.format(year, split)
     __sets[name] = (lambda split=split, year=year: pascal_voc(split, year))
+
+# Set up original+foggy <split>
+for split in ['train', 'val', 'trainval', 'test']:
+  name = 'original_n_foggy_{}'.format(split)
+  __sets[name] = (lambda split=split: original_n_foggy(split))
 
 # Set up coco_2014_<split>
 for year in ['2014']:
@@ -55,9 +61,10 @@ for version in ['150-50-20', '150-50-50', '500-150-80', '750-250-150', '1750-700
 # set up image net.
 for split in ['train', 'val', 'val1', 'val2', 'test']:
     name = 'imagenet_{}'.format(split)
-    devkit_path = 'data/imagenet/ILSVRC/devkit'
-    data_path = 'data/imagenet/ILSVRC'
+    devkit_path = '/home/kim/data/imagenet/ILSVRC/devkit'
+    data_path = '/home/kim/data/imagenet/ILSVRC'
     __sets[name] = (lambda split=split, devkit_path=devkit_path, data_path=data_path: imagenet(split,devkit_path,data_path))
+
 
 def get_imdb(name):
   """Get an imdb (image database) by name."""
