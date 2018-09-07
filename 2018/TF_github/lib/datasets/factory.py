@@ -25,7 +25,7 @@ for year in ['2007', '2012']:
     name = 'voc_{}_{}'.format(year, split)
     __sets[name] = (lambda split=split, year=year: pascal_voc(split, year))
 
-# Set up original+foggy <split>
+# Set up original_n_foggy <split>
 for split in ['train', 'val', 'trainval', 'test']:
   name = 'original_n_foggy_{}'.format(split)
   __sets[name] = (lambda split=split: original_n_foggy(split))

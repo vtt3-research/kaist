@@ -109,7 +109,7 @@ class original_n_foggy(imdb):
         """
         Return the default path where PASCAL VOC is expected to be installed.
         """
-        return os.path.join(cfg.DATA_DIR, 'original+foggy_prepared')
+        return os.path.join(cfg.DATA_DIR, 'original_foggy_prepared')
 
     def gt_roidb(self):
         """
