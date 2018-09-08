@@ -16,22 +16,29 @@ Requirements
 * Pytorch >= 0.3.0
 * ``` pip install -r requirements.txt ```
 
-Training
+Prepare Dataset
 --------
+Adapting from **Cityscapes** to **Foggy Cityscapes**.
 
-#### Download and prepare dataset
-Follow the instruction of [here](https://github.com/yuhuayc/da-faster-rcnn#example)
+Source: train set of Cityscapes
 
-#### Train
-	python trainval_dafrcnn.py --cuda
+Target: val set of Foggy Cityscapes
+
+1. Download **gtFine_trainvaltest.zip**, **leftImg8bit_trainvaltest.zip** and **leftImg8bit_trainvaltest_foggy.zip** from [here](www.cityscapes-dataset.com)
+2. Prepare the data using the scripts in 'data/prepare_data.m'
+3. Structure of the prepared dataset is same with Pascal VOC.
+
+Train
+------
+	python trainval_net_da_only_im.py --cuda
 
 
 Validation
 -------
-	python test_da.py --cuda
+	python test_net_da_only_im.py --cuda
 
 
-Result
+Results
 ------
 To be updated
 
