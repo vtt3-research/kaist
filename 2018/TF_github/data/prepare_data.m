@@ -8,9 +8,9 @@ source_data_dir = 'CITYSCAPES_DIR';
 target_data_dir = 'FOGGY_CITYSCAPES_DIR';
 
 %% initialization
-img_dir = 'VOCdevkit2007/VOC2007/JPEGImages';
-sets_dir = 'VOCdevkit2007/VOC2007/ImageSets/Main';
-annotation_dir = 'VOCdevkit2007/VOC2007/Annotations';
+img_dir = 'original_foggy_prepared/JPEGImages';
+sets_dir = 'original_foggy_prepared/ImageSets/Main';
+annotation_dir = 'original_foggy_prepared/Annotations';
 
 addpath VOCdevkit2007/VOCcode
 mkdir(img_dir); mkdir(sets_dir); mkdir(annotation_dir);
@@ -36,7 +36,7 @@ end
 
 % process target train images.
 [~,cmd_output] = system(sprintf('find %s -name "*_beta_0.02.png"', ...
-    fullfile(target_data_dir,'leftImg8bit_foggy','train')));
+    fullfile(target_data_dir,'leftImg8bit_foggy','val')));
 file_names = strsplit(cmd_output); file_names = file_names(1:end-1);
 
 target_train_list = cell(numel(file_names),1);
@@ -72,8 +72,8 @@ end
 train_list = [source_train_list;target_train_list];
 test_list = target_test_list;
 
-write_list(train_list,fullfile(sets_dir,'trainval.txt'));
-write_list(test_list,fullfile(sets_dir,'test.txt'));
+write_list(train_list,fullfile(sets_dir,'train.txt'));
+write_list(test_list,fullfile(sets_dir,'val.txt'));
 
 %% prepare the annotation needed for training/testing.
 load cityscapes_semantics
