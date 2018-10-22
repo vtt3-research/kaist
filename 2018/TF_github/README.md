@@ -5,28 +5,35 @@ KAIST Transfer Learning for VTT
 # Pytorch Implementation of Domain Adaptive Faster R-CNN
 Pytorch version of [da-faster-rcnn](https://arxiv.org/abs/1803.03243).
 
-The original code with Caffe can be found [here](https://github.com/yuhuayc/da-faster-rcnn).
-
-This repository is based on [Pytorch Implementation of Faster R-CNN](https://github.com/jwyang/faster-rcnn.pytorch).
+This repository is based on [Pytorch Implementation of Faster R-CNN](https://github.com/jwyang/faster-rcnn.pytorch) and original [da-faster-rcnn code](https://github.com/yuhuayc/da-faster-rcnn).
 
 Requirements
 ------------
 
-* Python2.7 or 3.x
-* Pytorch >= 0.3.0
-* ``` pip install -r requirements.txt ```
+* Python 2.7 or 3.x
+* Pytorch 0.4.0 (not support 0.4.1 or higher)
 
-Prepare Dataset
+Preparation
 --------
-Adapting from **Cityscapes** to **Foggy Cityscapes**.
+Example of adapting from **Cityscapes** to **Foggy Cityscapes**.
 
 Source: train set of Cityscapes
 
 Target: val set of Foggy Cityscapes
 
+####Prepare dataset
 1. Download **gtFine_trainvaltest.zip**, **leftImg8bit_trainvaltest.zip** and **leftImg8bit_trainvaltest_foggy.zip** from [here](www.cityscapes-dataset.com)
-2. Prepare the data using the scripts in 'data/prepare_data.m'
-3. Structure of the prepared dataset is same with Pascal VOC.
+2. Prepare the data using the scripts 'data/prepare_data.m'
+
+####Pretrained model
+1. Download pretrained model [here](https://github.com/jwyang/faster-rcnn.pytorch#pretrained-model).
+2. Put them into 'data/pretrained_model/'.
+
+####Compile the cuda dependencies.
+	
+	pip install -r requirements.txt
+	cd lib
+	sh make.sh
 
 Train
 ------
