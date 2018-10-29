@@ -43,8 +43,9 @@ class _da_fasterRCNN(nn.Module):
         batch_size = im_data.size(0)
 
         im_info = im_info.data
-        gt_boxes = gt_boxes.data
-        num_boxes = num_boxes.data
+        if gt_boxes is not None:
+            gt_boxes = gt_boxes.data
+            num_boxes = num_boxes.data
 
         # feed image data to base model to obtain base feature map
         base_feat = self.RCNN_base(im_data)
