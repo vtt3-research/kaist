@@ -89,7 +89,7 @@ class _RPN(nn.Module):
         self.rpn_loss_box = 0
 
         # generating training labels and build the rpn loss
-        if self.training:
+        if self.training and need_backprop:
             assert not np.any(np.isnan(gt_boxes.cpu().numpy()))
             rpn_data = self.RPN_anchor_target((rpn_cls_score.data, gt_boxes, im_info, num_boxes))
 
