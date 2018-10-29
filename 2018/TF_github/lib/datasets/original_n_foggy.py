@@ -296,7 +296,7 @@ class original_n_foggy(imdb):
         cachedir = os.path.join(self._devkit_path, 'annotations_cache')
         aps = []
         # The PASCAL VOC metric changed in 2010
-        use_07_metric = False
+        use_07_metric = True 
         print('VOC07 metric? ' + ('Yes' if use_07_metric else 'No'))
         if not os.path.isdir(output_dir):
             os.mkdir(output_dir)
