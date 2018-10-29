@@ -52,7 +52,7 @@ class _da_fasterRCNN(nn.Module):
         # feed base feature map tp RPN to obtain rois
         rois, rpn_loss_cls, rpn_loss_bbox = self.RCNN_rpn(base_feat, im_info, gt_boxes, num_boxes)
 
-        # train phase
+        # train phase - SOURCE
         if self.training:
             # source
             if need_backprop.numpy():
@@ -114,17 +114,7 @@ class _da_fasterRCNN(nn.Module):
 
                 return rois, cls_prob, bbox_pred, rpn_loss_cls, rpn_loss_bbox, RCNN_loss_cls, RCNN_loss_bbox, rois_label, RCNN_loss_img
 
-            # target
-            else:
-                RCNN_loss_cls = Variable(torch.zeros(1).float().cuda())
-                RCNN_loss_bbox = Variable(torch.zeros(1).float().cuda())
-                cls_prob = 0
-                bbox_pred = 0
-                rois_label = 0
-                RCNN_loss_img = self.im_da(base_feat, dc_label)
-                return rois, cls_prob, bbox_pred, rpn_loss_cls, rpn_loss_bbox, RCNN_loss_cls, RCNN_loss_bbox, rois_label, RCNN_loss_img
-
-        # test phase
+        # test phase or TARGET
         else:
             rois_label = None
             rois_target = None
@@ -151,6 +141,18 @@ class _da_fasterRCNN(nn.Module):
 
             # feed pooled features to top model
             pooled_feat = self._head_to_tail(pooled_feat)
+
+            # TARGET
+            if self.training and (not need_backprop.numpy()):
+                RCNN_loss_cls = Variable(torch.zeros(1).float().cuda())
+                RCNN_loss_bbox = Variable(torch.zeros(1).float().cuda())
+                cls_prob = 0
+                bbox_pred = 0
+                rois_label = 0
+                RCNN_loss_img = self.im_da(base_feat, dc_label)
+
+                return rois, cls_prob, bbox_pred, rpn_loss_cls, rpn_loss_bbox, RCNN_loss_cls, RCNN_loss_bbox, rois_label, RCNN_loss_img
+
 
             # compute bbox offset
             bbox_pred = self.RCNN_bbox_pred(pooled_feat)

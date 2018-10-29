@@ -101,7 +101,7 @@ def parse_args():
   # resume trained model
   parser.add_argument('--r', dest='resume',
                       help='resume checkpoint or not',
-                      default=True, type=bool)
+                      default=False, type=bool)
   parser.add_argument('--checksession', dest='checksession',
                       help='checksession to load model',
                       default=1, type=int)
@@ -387,7 +387,7 @@ if __name__ == '__main__':
       rois2, cls_prob2, bbox_pred2, \
       _, _, \
       _, _, \
-      rois_label2, RCNN_loss_img2 = fasterRCNN(im_data, im_info, gt_boxes, num_boxes, need_backprop, dc_label)
+      rois_label2, RCNN_loss_img2 = fasterRCNN(im_data, im_info, None, None, need_backprop, dc_label)
 
       loss = RCNN_loss_img2.mean()
       loss_temp += loss.data[0]

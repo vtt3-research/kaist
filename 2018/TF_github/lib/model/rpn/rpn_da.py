@@ -76,9 +76,9 @@ class _RPN(nn.Module):
         # proposal layer
         if self.training:
             if need_backprop:
-                cfg_key = 'TEST'
-            else:
                 cfg_key = 'TRAIN'
+            else:
+                cfg_key = 'TEST'
         else:
             cfg_key = 'TEST'
 
