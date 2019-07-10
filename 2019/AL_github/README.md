@@ -15,11 +15,11 @@ Requirements
 Preparation
 --------
 
-####Pretrained model
+###Pretrained model
 1. Download pretrained model [here](https://github.com/jwyang/faster-rcnn.pytorch#pretrained-model).
 2. Put them into 'data/pretrained_model/'.
 
-####Compile the cuda dependencies.
+###Compile the cuda dependencies.
 	
 	pip install -r requirements.txt
 	cd lib
