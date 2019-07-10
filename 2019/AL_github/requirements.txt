@@ -7,3 +7,4 @@ easydict
 matplotlib
 pyyaml
 tensorboardX
+torchvision==0.2.2
