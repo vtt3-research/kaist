@@ -1,8 +1,8 @@
-# Active Learning for Faster R-CNN
+# Transfer & Active Learning for Faster R-CNN
 KAIST Active Learning for VTT
 
 
-# Pytorch Implementation of Active Learning for Faster R-CNN
+# Pytorch Implementation of Transfer & Active Learning for Faster R-CNN
 
 This repository is based on [Pytorch Implementation of Faster R-CNN](https://github.com/jwyang/faster-rcnn.pytorch).
 
@@ -37,7 +37,10 @@ Validation
 
 Results
 ------
-To be updated
+High-entropy queries
+![high-entropy](./img/high-entropy.png)
+Low-entropy queries
+![low-entropy](./img/low-entropy.png)
 
 Citations
 ----------
