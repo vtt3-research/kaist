@@ -35,13 +35,6 @@ Validation
 	python test_net.py --cuda
 
 
-Results
-------
-High-entropy queries
-![high-entropy](./img/high-entropy.png)
-Low-entropy queries
-![low-entropy](./img/low-entropy.png)
-
 Citations
 ----------
 	@article{jjfaster2rcnn,
