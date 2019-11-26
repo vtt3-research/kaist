@@ -36,7 +36,7 @@ from model.faster_rcnn.resnet import resnet
 from query_strategies.random_sampling import RandomSampling_poolbased
 from query_strategies.entropy_uncertainty import EntropyUncertainty_poolbased
 from query_strategies.dropout_uncertainty import DropoutUncertainty_poolbased
-
+from query_strategies.prob_based_sampling import ProbBasedSampling_poolbased
 
 
 def parse_args():
